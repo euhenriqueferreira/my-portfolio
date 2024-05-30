@@ -1,0 +1,91 @@
+//out:false
+
+header {
+    background-image: linear-gradient(to bottom, #000000, #210A3D, #3f2264);
+    height: 640px;
+    padding: 40px 40px 0 40px;
+
+    .line_one {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            height: 40px;
+            width: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .navbar-menu-desktop {
+            ul.navbar-items {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0 30px;
+
+                li.nav-item {
+                    a {
+                        span {
+                            font-size: 18px;
+                            line-height: 1.2em;
+                            color: @white;
+                            .fonte-regular;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-section-top {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0 55px;
+
+        .caption {
+            max-width: 550px;
+
+            h1 {
+                font-size: 72px;
+                line-height: 1em;
+                color: @white;
+                margin-bottom: 20px;
+                .lora-medium;
+            }
+
+            span.subtitle {
+                font-size: 25px;
+                line-height: 1.2em;
+                color: @white;
+                opacity: 0.8;
+                .lora-medium;
+            }
+
+            p.resume {
+                margin-top: 20px;
+                font-size: 22px;
+                line-height: 1.4em;
+                color: @white;
+                opacity: 0.8;
+                .fonte-regular;
+            }
+        }
+
+        .image {
+            img {
+                width: 700px;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+    }
+}
