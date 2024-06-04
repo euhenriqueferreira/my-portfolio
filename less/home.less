@@ -5,3 +5,449 @@
 @import "resets.less";
 @import "header.less";
 @import "w-container.less";
+@import "buttons.less";
+
+
+/* ------------------------ */ 
+/* -- Container About Me -- */ 
+/* ------------------------ */ 
+.container-about-me{
+    padding-bottom: 70px;
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to bottom, #3F2264, #3F2264, #3F2264);
+}
+
+/* --------------------- */ 
+/* -- My Presentation -- */ 
+/* --------------------- */ 
+section.my-presentation{
+    // display: none;
+    max-width: 1240px;
+    margin: 0 auto;
+    .container-mp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 80px;
+        padding: 0px 20px 80px 20px;
+        &__image{
+            width: 555px;
+            height: auto;
+            svg{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .mobile{
+                display: none;
+            }
+
+            .smartphone{
+                display: none;
+            }
+        }   
+
+        &__caption{
+            flex: 1;
+            h2{
+                font-size: 40px;
+                line-height: 1.2em;
+                color: @white;
+                margin-bottom: 15px;
+                .lora-bold;
+            }
+            .text{
+                p{
+                    font-size: 17px;
+                    line-height: 1.5em;
+                    color: @white;
+                    .fonte-regular;
+                }
+            }
+        }
+    }
+}
+
+
+section.my-hobbies{
+    display: none;
+    padding-bottom: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    .container-mh{
+        &__title{
+            margin-bottom: 36px;
+            h2{
+                font-size: 40px;
+                line-height: 1.2em;
+                color: @white;
+                text-align: center;
+                .lora-bold;
+            }
+        }
+
+        &__hobbies-list{
+            display: grid;
+            grid-template-columns: 460px 460px;
+            column-gap: 65px;
+            .accordion{
+             
+                margin-bottom: 20px;
+                .accordion-header{
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    span{
+                        font-size: 20px;
+                        line-height: 1.2em;
+                        color: @white;
+                        text-align: left;
+                        .lora-semibold;
+                    }
+
+                    .icon{
+                        width: 45px;
+                        height: 45px;
+                        position: relative;
+                    
+                        .plus, .minus{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 45px;
+                            height: 45px;
+                         
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            i{
+                                font-size: 33px;
+                                color: @dark-purple;
+                            }
+                        }
+
+                        .plus{
+                            background: #6939A8;
+
+                            i{
+                                color: @dark-purple;
+                            }
+                        }
+
+                        .minus{
+                            display: none;
+                            background: #9857EE;
+
+                            i{
+                                color: @white;
+                            }
+                        }
+                    }
+                }
+
+                .accordion-content{
+                    // padding: 25px 5px 25px 0;
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: max-height 0.3s ease-out;
+
+                    &.active{
+                 
+                        max-height: 200px;
+
+                    }
+
+                    p{
+                        margin: 25px 5px 25px 0;
+                        font-size: 17px;
+                        line-height: 1.4em;
+                        color: @white;
+                        opacity: 0.85;
+                        .fonte-regular;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.my-experience{
+    display: none;
+    padding: 0px 20px;
+    .container-mx{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0 40px;
+        &__caption{
+            padding-top: 20px;
+            max-width: 565px;
+            h2{
+                font-size: 40px;
+                line-height: 1.2em;
+                color: @white;
+                margin-bottom: 28px;
+                .lora-semibold;
+            }
+            
+            p{
+                font-size: 16px;
+                line-height: 1.7em;
+                color: @white;
+                text-align: left;
+                margin-bottom: 28px;
+                .fonte-regular;
+            }
+        }
+
+        &__image{
+            width: 633px;
+            height: auto;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+
+
+/* ----------------------------------- */ 
+/* ---------- Media Queries ---------- */ 
+/* ----------------------------------- */ 
+@media screen and (max-width: 1280px){
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            gap: 0 75px;
+            &__image{
+                width: 525px;
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px){
+
+    .container-about-me{
+        padding-top: 50px;
+    }
+
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            gap: 0 40px;
+            &__image{
+                width: 490px;
+            }  
+
+            &__caption{
+                h2{
+                    font-size: 36px;
+                }
+                .text{
+                    position: relative;
+                    overflow: scroll;
+                    max-height: 350px;
+                    padding-right: 10px;
+                    p{
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px){
+
+    .container-about-me{
+        padding-top: 60px;
+    }
+
+
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            gap: 0 55px;
+            &__image{
+                width: 350px;
+
+                .mobile{
+                    display: block;
+                }
+
+                .desk{
+                    display: none;
+                }
+
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 34px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px){
+
+    .container-about-me{
+        // padding-top: 60px;
+    }
+
+
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            &__image{
+                width: 310px;
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 31px;
+                    margin-bottom: 12px;
+                }
+                .text{
+                    max-height: 310px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            gap: 0 32px;
+            &__image{
+                width: 210px;
+
+                .mobile{
+                    display: none;
+                }
+
+                .smartphone{
+                    display: block;
+                }
+
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 28px;
+                }
+                .text{
+                    p{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    .container-about-me{
+        padding-top: 40px;
+    }
+
+
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            gap: 0 32px;
+            &__image{
+                width: 180px;
+
+                .mobile{
+                    display: none;
+                }
+
+                .smartphone{
+                    display: block;
+                }
+
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 28px;
+                }
+                .text{
+                    max-height: 270px;
+                    p{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 575px){
+
+    .container-about-me{
+        padding-top: 60px;
+    }
+
+
+    /* --------------------- */ 
+    /* -- My Presentation -- */ 
+    /* --------------------- */ 
+    section.my-presentation{
+        .container-mp{
+            position: relative;
+            &__image{
+                opacity: 0.4;
+                position: absolute;
+                right: 10%;
+            }   
+
+            &__caption{
+                h2{
+                    font-size: 25px;
+                }
+                .text{
+                    p{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
