@@ -513,6 +513,8 @@
                             <path d="M136.524 209.337C134.126 208.51 134.33 210.129 135.205 212.034C130.553 214.847 125.468 218.348 119.964 218.382L114.113 205.847L130.781 200.406L131.08 201.21C132.76 202.74 134.582 204.119 136.524 205.331C137.518 205.966 138.616 206.436 139.774 206.72C141.2 207.122 142.676 207.334 144.163 207.351C144.444 207.31 144.732 207.354 144.986 207.477C145.24 207.6 145.447 207.796 145.579 208.038C145.711 208.279 145.761 208.554 145.722 208.824C145.683 209.094 145.557 209.345 145.362 209.544C144.403 210.324 140.661 210.737 136.524 209.337Z" fill="#FFBE9D"/>
                             <path d="M137.004 210.749C136.428 211.499 135.737 212.161 134.953 212.712C133.146 214.149 131.161 215.368 129.042 216.339C126.925 217.314 124.689 218.031 122.387 218.474C121.444 218.71 120.471 218.815 119.497 218.784C125.931 217.526 131.94 214.766 136.992 210.749H137.004Z" fill="#455A64"/>
                         </svg>
+
+                        <img src="images/scroll-gif.gif" alt="Use o Scroll" title="Use o Scroll">
                     </div>
                     <div class="container-mp__caption">
                         <h2>Quem sou eu?!</h2>
@@ -553,11 +555,130 @@
                 <div class="container-mx">
                     <div class="container-mx__caption">
                         <h2>Minha Experiência como Dev!</h2>
-                        <p>Durante dois anos, tive o prazer de integrar um time de desenvolvedores, onde contribuí para o desenvolvimento do Frontend de mais de 15 projetos de websites. Nesse período, criei interfaces para uma variedade de plataformas, desde sites institucionais e landing pages até e-commerces. Trabalhei em projetos diversificados, incluindo sites para vinícolas, lojas de utilidades, empresas de alimentos, fornecedores de cursos e indústrias.</p>
+                        <div class="text">
+                            <p>Durante dois anos, tive o prazer de integrar um time de desenvolvedores, onde contribuí para o desenvolvimento do Frontend de mais de 15 projetos de websites. Nesse período, criei interfaces para uma variedade de plataformas, desde sites institucionais e landing pages até e-commerces. Trabalhei em projetos diversificados, incluindo sites para vinícolas, lojas de utilidades, empresas de alimentos, fornecedores de cursos e indústrias.</p>
+                        </div>
                         <button class="main-button">Descobrir mais sobre o Quinho!</button>
                     </div>
                     <div class="container-mx__image">
-                        <img src="images/programming.svg" alt="Imagem por StorySet" title="Imagem por StorySet">
+                        <img src="images/scroll-gif.gif" class="scroll" alt="Use o Scroll" title="Use o Scroll">
+
+                        <img src="images/programming.svg" class="desk" alt="Imagem por StorySet" title="Imagem por StorySet">
+                        <img src="images/programming-medium.svg" class="medium" alt="Imagem por StorySet" title="Imagem por StorySet">
+                        <img src="images/programming-mobile.svg" class="mobile" alt="Imagem por StorySet" title="Imagem por StorySet">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="my-cases">
+            <div class="w-container w1440">
+                <div class="container-mc">
+                    <div class="container-mc__caption">
+                        <h2>Meus Cases</h2>
+                        <div class="text">
+                            <p>Ao longo dos anos, tive a oportunidade de colaborar em diversos projetos desafiadores e gratificantes. Aqui estão alguns dos cases que destacam minha experiência e habilidades em desenvolvimento web. Cada projeto foi uma oportunidade de enfrentar novos desafios, aprender e crescer profissionalmente. Confira alguns dos trabalhos que mais me orgulham e veja como posso transformar ideias em soluções digitais impactantes.</p>
+                            <p>Meu primeiro cargo como dev foi “Desenvolvedor Web Frontend” em uma empresa chamada Wopus Studio Web.</p>
+                        </div>
+                    </div>
+                    <div class="container-mc__list-cases">
+                        <div class="item">
+                            <img src="images/don-abel-case.png" alt="Projeto Don Abel" title="Projeto Don Abel" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>Don Abel</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://www.donabel.com.br/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/br-laser-case.png" alt="Projeto BR Laser" title="Projeto BR Laser" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>BR Laser</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://www.brlaser.ind.br/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/igor-tattoo-case.png" alt="Projeto Igor Godoy Tattoo" title="Projeto Igor Godoy Tattoo" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>Igor Godoy Tattoo</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://www.igorgodoytattoo.com.br/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/adega-boscato-case.png" alt="Projeto Adega Boscato" title="Projeto Adega Boscato" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>Adega Boscato</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://www.adegaboscato.com.br/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/expo-motor-case.png" alt="Projeto Expo MotorHome" title="Projeto Expo MotorHome" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>Expo MotorHome</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://www.expomotorhome.com/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/pisani-case.png" alt="Projeto Pisani 50 Anos" title="Projeto Pisani 50 Anos" class="logo">
+                            <div class="hover-caption">
+                                <div class="hover-header">
+                                    <h3>Pisani 50 Anos</h3>
+                                </div>
+                                <div class="button">
+                                    <a href="https://pisani.com.br/50anos/" target="_blank" rel="noreferrer nofollow noopener" class="external-case-button">
+                                        <div class="bar"></div>
+                                        <span class="desk">Clique para acessar</span>
+                                        <span class="mobile">Acessar</span>
+                                        <div class="bar"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img src="images/scroll-gif.gif" class="scroll" alt="Use o Scroll" title="Use o Scroll">
                     </div>
                 </div>
             </div>

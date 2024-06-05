@@ -37,11 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const accordions = document.querySelectorAll('.accordion');
 
     accordions.forEach((accordion)=> {
-        const header = accordion.querySelector('.accordion-header');
+        const accordionHeader = accordion.querySelector('.accordion-header');
 
-        if(header){
-            header.addEventListener('click', function(){
-                const content = header.nextElementSibling;
+        if(accordionHeader){
+            accordionHeader.addEventListener('click', function(){
+                const content = accordionHeader.nextElementSibling;
+                const icon = accordionHeader.querySelector(".icon");
+                if(icon){
+                    console.log("icon")
+                    icon.classList.toggle("active");
+                }
                 if(content){
                     content.classList.toggle('active');
                 }

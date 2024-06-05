@@ -48,6 +48,10 @@ section.my-presentation{
             .smartphone{
                 display: none;
             }
+
+            img{
+                display: none;
+            }
         }   
 
         &__caption{
@@ -60,6 +64,8 @@ section.my-presentation{
                 .lora-bold;
             }
             .text{
+              
+
                 p{
                     font-size: 17px;
                     line-height: 1.5em;
@@ -71,9 +77,10 @@ section.my-presentation{
     }
 }
 
-
+/* ---------------- */ 
+/* -- My Hobbies -- */ 
+/* ---------------- */ 
 section.my-hobbies{
-    display: none;
     padding-bottom: 100px;
     max-width: 1100px;
     margin: 0 auto;
@@ -93,6 +100,9 @@ section.my-hobbies{
             display: grid;
             grid-template-columns: 460px 460px;
             column-gap: 65px;
+            justify-content: center;
+            align-items: flex-start;
+
             .accordion{
              
                 margin-bottom: 20px;
@@ -147,6 +157,16 @@ section.my-hobbies{
                                 color: @white;
                             }
                         }
+
+                        &.active{
+                            .plus{
+                                display: none;
+                            }
+
+                            .minus{
+                                display: flex;
+                            }
+                        }
                     }
                 }
 
@@ -176,8 +196,11 @@ section.my-hobbies{
     }
 }
 
+/* ------------------- */ 
+/* -- My Experience -- */ 
+/* ------------------- */ 
 section.my-experience{
-    display: none;
+    // display: none;
     padding: 0px 20px;
     .container-mx{
         display: flex;
@@ -213,6 +236,151 @@ section.my-experience{
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+            }
+            
+            .medium, .mobile{
+                display: none;
+            }
+
+            .scroll{
+                display: none;
+            }
+        }
+    }
+}
+
+/* -------------- */ 
+/* -- My Cases -- */ 
+/* -------------- */ 
+section.my-cases{
+    margin-top: 100px;
+    padding: 0px 20px;
+    .container-mc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 0 80px;
+        &__caption{
+            max-width: 580px;
+            h2{
+                font-size: 40px;
+                line-height: 1.2em;
+                color: @white;
+                margin-bottom: 22px;
+                text-align: left;
+                .lora-bold;
+            }
+
+            .text{
+                p{
+                    font-size: 17px;
+                    line-height: 1.5em;
+                    color: @white;
+                    .fonte-regular;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &__list-cases{
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 30px;
+            row-gap: 35px;
+
+            .scroll{
+                display: none;
+            }
+
+            .item{
+                width: 265px;
+                height: 115px;
+                border-radius: 10px;
+                background: #291344;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+
+                img{
+                    width: auto;
+                    height: 62px;
+                    object-fit: scale-down;
+                }
+
+                .hover-caption{
+                    background: #291344;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    gap: 13px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -100%;
+                    z-index: 2;
+                    transition: bottom .3s ease;
+                    .hover-header{
+                        h3{
+                            font-size: 20px;
+                            line-height: 1.2em;
+                            color: @white;
+                            text-align: center;
+                            .lora-semibold;
+                        }
+                    }
+
+                    .button{
+                        a.external-case-button{
+                            background: transparent;
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                            outline: 0;
+                            color: @white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 0 10px;
+                            font-size: 18px;
+                            line-height: 1.2em;
+                            cursor: pointer;
+                            transition: .3s;
+                            opacity: 0.7;
+                            .lora-regular;
+                            
+                            span.mobile{
+                                display: none;
+                            }
+
+                            .bar{
+                                opacity: 0.7;
+                                width: 20px;
+                                height: 2px;
+                                background: @white;
+                            }
+
+                            &:hover{
+                                opacity: 1;
+
+                                .bar{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover{
+                    .hover-caption{
+                        bottom: 0;
+                    }
+                }
             }
         }
     }
@@ -257,6 +425,17 @@ section.my-experience{
             gap: 0 40px;
             &__image{
                 width: 490px;
+                position: relative;
+
+                img{
+                    display: block;
+                    width: 25px;
+                    height: auto;
+                    right: -23px;
+                    bottom: 20px;
+                    position: absolute;
+                    z-index: 2;
+                }
             }  
 
             &__caption{
@@ -268,8 +447,142 @@ section.my-experience{
                     overflow: scroll;
                     max-height: 350px;
                     padding-right: 10px;
+
                     p{
                         font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------------- */ 
+    /* -- My Hobbies -- */ 
+    /* ---------------- */ 
+    section.my-hobbies{
+        .container-mh{
+            &__title{
+                margin-bottom: 30px;
+                h2{
+                    font-size: 34px;
+                }
+            }
+
+            &__hobbies-list{
+                grid-template-columns: 435px 435px;
+                column-gap: 60px;
+            }
+        }
+    }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            align-items: center;
+            &__caption{
+                padding-top: 0;
+                max-width: none;
+                flex: 1;
+                h2{
+                    font-size: 33px;
+                    margin-bottom: 16px;
+                }
+
+                .text{
+                    position: relative;
+                    overflow: scroll;
+                    max-height: 170px;
+                    padding-right: 10px;
+                    margin-bottom: 18px;
+                }
+                
+                p{
+                    margin-bottom: 0;
+                }
+
+                button.main-button{
+                    font-size: 16px;
+                }
+            }
+    
+            &__image{
+                width: min(531px, 46%);
+                position: relative;
+                .scroll{
+                    position: absolute;
+                    left: -30px;
+                    top: 80px;
+                    display: block;
+                    width: 23px;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        .container-mc{
+            gap: 0 45px;
+            &__caption{
+                h2{
+                    font-size: 37px;
+                    margin-bottom: 18px;
+                }
+
+                .text{
+                    position: relative;
+                    overflow: scroll;
+                    max-height: 270px;
+                    padding-right: 10px;
+                }
+            }
+
+            &__list-cases{
+                column-gap: 22px;
+                row-gap: 18px;
+                .item{
+                    width: 220px;
+                    height: 105px;
+
+                    &:nth-of-type(3), &:nth-of-type(5){
+                        img{
+                            height: 65px;
+                        }
+                    }
+
+                    &:nth-of-type(6){
+                        img{
+                            height: 35px;
+                        }
+                    }
+
+                    img{
+                        height: 50px;
+                    }
+
+                    .hover-caption{
+                        .hover-header{
+                            h3{
+                                font-size: 18px;
+                            }
+                        }
+
+                        .button{
+                            a.external-case-button{
+                                gap: 0 7px;
+                                font-size: 16px;
+
+                                .bar{
+                                    width: 15px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -310,16 +623,164 @@ section.my-experience{
             }
         }
     }
+
+    /* ---------------- */ 
+    /* -- My Hobbies -- */ 
+    /* ---------------- */ 
+    section.my-hobbies{
+        .container-mh{
+            &__title{
+                h2{
+                    font-size: 31px;
+                }
+            }
+
+            &__hobbies-list{
+                grid-template-columns: 1fr 1fr;
+                column-gap: 55px;
+                padding: 0 45px;
+
+                .accordion{
+                    .accordion-header{
+                        height: 40px;
+                        span{
+                            font-size: 19px;
+                        }
+
+                        .icon{
+                            width: 40px;
+                            height: 40px;
+                        
+                            .plus, .minus{
+                                width: 40px;
+                                height: 40px;
+
+                                i{
+                                    font-size: 28px;
+                                }
+                            }
+                        }
+                    }
+
+                    .accordion-content{
+                        p{
+                            margin: 20px 5px 25px 0;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            &__caption{
+                h2{
+                    font-size: 29px;
+                }
+
+                button.main-button{
+                    font-size: 16px;
+                    .fonte-semibold;
+                }
+            }
+    
+            &__image{
+                width: min(385px, 42%);
+                .desk{
+                    display: none;
+                }
+
+                .medium{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        .container-mc{
+            gap: 0 35px;
+            &__caption{
+                h2{
+                    font-size: 31px;
+                    margin-bottom: 15px;
+                }
+
+                .text{
+                    max-height: 250px;
+                }
+            }
+
+            &__list-cases{
+                column-gap: 15px;
+                row-gap: 15px;
+                position: relative;
+
+                .scroll{
+                    display: block;
+                    position: absolute;
+                    right: -30px;
+                    bottom: 80px;
+                    width: 20px;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                .item{
+                    width: 200px;
+                    height: 95px;
+
+                    &:nth-of-type(3), &:nth-of-type(5){
+                        img{
+                            height: 59px;
+                        }
+                    }
+
+                    &:nth-of-type(6){
+                        img{
+                            height: 31px;
+                        }
+                    }
+
+                    &:nth-of-type(2){
+                        img{
+                            height: 22px;
+                        }
+                    }
+
+                    img{
+                        height: 46px;
+                    }
+
+                    .hover-caption{
+                        .button{
+                            a.external-case-button{
+                                span.desk{
+                                    display: none;
+                                }
+
+                                span.mobile{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width: 850px){
-
-    .container-about-me{
-        // padding-top: 60px;
-    }
-
-
     /* --------------------- */ 
     /* -- My Presentation -- */ 
     /* --------------------- */ 
@@ -340,6 +801,78 @@ section.my-experience{
             }
         }
     }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            &__caption{
+                h2{
+                    font-size: 27px;
+                }
+
+                .text{
+                    max-height: 150px;
+                }
+            }
+        }
+    }
+
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        .container-mc{
+            &__caption{
+                h2{
+                    font-size: 27px;
+                    margin-bottom: 10px;
+                }
+
+                .text{
+                    max-height: 235px;
+                    p{
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &__list-cases{
+                column-gap: 10px;
+                row-gap: 10px;
+                .item{
+                    width: 175px;
+                    height: 90px;
+
+                    &:nth-of-type(6){
+                        img{
+                            height: 27px;
+                        }
+                    }
+
+                    &:nth-of-type(2){
+                        img{
+                            height: 18px;
+                        }
+                    }
+
+                    img{
+                        height: 42px;
+                    }
+
+                    .hover-caption{
+                        .hover-header{
+                            h3{
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -361,6 +894,12 @@ section.my-experience{
                     display: block;
                 }
 
+                img{
+                    width: 22px;
+                    right: -23px;
+                    bottom: 18px;
+                }
+
             }   
 
             &__caption{
@@ -371,6 +910,110 @@ section.my-experience{
                     p{
                         font-size: 16px;
                     }
+                }
+            }
+        }
+    }
+
+    /* ---------------- */ 
+    /* -- My Hobbies -- */ 
+    /* ---------------- */ 
+    section.my-hobbies{
+        .container-mh{
+            &__hobbies-list{
+                column-gap: 35px;
+                padding: 0 25px;
+
+                .accordion{
+                    .accordion-content{
+                        p{
+                            margin: 15px 5px 15px 0;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            gap: 0 25px;
+            &__caption{
+                h2{
+                    max-width: 260px;
+                    margin-bottom: 10px;
+                }
+
+                .text{
+                    max-height: 140px;
+                    margin-bottom: 10px;
+                }
+                
+                p{
+                    font-size: 15px;
+                }
+
+                button.main-button{
+                    font-size: 15px;
+                    .fonte-medium;
+                }
+            }
+    
+            &__image{
+                width: min(266px, 45%);
+
+                .medium{
+                    display: none;
+                }
+
+                .mobile{
+                    display: block;
+                }
+
+                .scroll{
+                    left: 20px;
+                    top: 35px;
+                }
+            }
+        }
+    }
+
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        margin-top: 80px;
+        padding: 0px 20px;
+        .container-mc{
+            flex-direction: column;
+            gap: 55px 0;
+            &__caption{
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2{
+                    margin-bottom: 14px;
+                }
+
+                .text{
+                    text-align: center;
+                }
+            }
+
+            &__list-cases{
+                grid-template-columns: auto auto auto;
+
+                .scroll{
+                    left: 50%;
+                    right: unset;
+                    transform: translateX(-50%);
+                    bottom: unset;
+                    top: -45px;
                 }
             }
         }
@@ -416,13 +1059,89 @@ section.my-experience{
             }
         }
     }
+
+    /* ---------------- */ 
+    /* -- My Hobbies -- */ 
+    /* ---------------- */ 
+    section.my-hobbies{
+        padding-bottom: 50px;
+        .container-mh{
+            &__hobbies-list{
+                .accordion{
+                    .accordion-header{
+                        height: 35px;
+                        span{
+                            font-size: 18px;
+                        }
+
+                        .icon{
+                            width: 35px;
+                            height: 35px;
+                        
+                            .plus, .minus{
+                                width: 35px;
+                                height: 35px;
+
+                                i{
+                                    font-size: 24px;    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            justify-content: flex-start;
+            position: relative;
+            &__caption{
+                max-width: 90%;
+                z-index: 2;
+                position: relative;
+                h2{
+                    max-width: none;
+                    margin-bottom: 15px;
+                }
+
+                .text{
+                    max-height: 150px;
+                    margin-bottom: 20px;
+                }
+            }
+    
+            &__image{
+                width: 300px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                .mobile{
+                    opacity: 0.15;
+                }
+
+                .scroll{
+                    left: auto;
+                    right: 5%;
+                    z-index: 2;
+                    top: 5px;
+                }
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width: 575px){
 
     .container-about-me{
-        padding-top: 60px;
+        padding-top: 80px;
     }
 
 
@@ -431,11 +1150,16 @@ section.my-experience{
     /* --------------------- */ 
     section.my-presentation{
         .container-mp{
+            padding: 0px 20px 60px 20px;
             position: relative;
             &__image{
                 opacity: 0.4;
                 position: absolute;
                 right: 10%;
+
+                img{
+                    display: none;
+                }
             }   
 
             &__caption{
@@ -445,6 +1169,106 @@ section.my-experience{
                 .text{
                     p{
                         font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ---------------- */ 
+    /* -- My Hobbies -- */ 
+    /* ---------------- */ 
+    section.my-hobbies{
+        .container-mh{
+            &__title{
+                h2{
+                    font-size: 25px;
+                }
+            }
+
+            &__hobbies-list{
+                grid-template-columns: 1fr;
+                column-gap: 0;
+                padding: 0 40px;
+            }
+        }
+    }
+
+    /* ------------------- */ 
+    /* -- My Experience -- */ 
+    /* ------------------- */ 
+    section.my-experience{
+        .container-mx{
+            &__caption{
+                max-width: 95%;
+                h2{
+                    font-size: 25px;
+                }
+
+                .text{
+                    max-height: 220px;
+                }
+            }
+    
+            &__image{
+
+                .scroll{
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        margin-top: 65px;
+        .container-mc{
+            &__caption{
+                h2{
+                    font-size: 25px;
+                }
+
+                .text{
+                    max-height: 220px;
+                    p{
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            &__list-cases{
+                grid-template-columns: auto auto;
+
+                .item{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 440px){
+    /* -------------- */ 
+    /* -- My Cases -- */ 
+    /* -------------- */ 
+    section.my-cases{
+        margin-top: 50px;
+        .container-mc{
+            &__list-cases{
+                column-gap: 5px;
+                row-gap: 5px;
+                .item{
+                    width: 165px;
+                    height: 85px;
+                    .hover-caption{
+                        .hover-header{
+                            h3{
+                                font-size: 16px;
+                            }
+                        }
                     }
                 }
             }

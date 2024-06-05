@@ -483,13 +483,16 @@ header {
         padding: 30px 15px 0 15px;
         .hero-section-top {
             align-items: center;
+            position: relative;
     
             .caption {
                 padding-top: 0;
+                position: relative;
+                z-index: 2;
                 
                 .title{
                     h1 {
-                        font-size: 25px;
+                        font-size: 32px;
                         margin-bottom: 9px;
                     }
                 }
@@ -499,13 +502,29 @@ header {
                 }
     
                 p.resume {
-                    font-size: 14px;
+                    font-size: 15px;
                     margin-top: 9px;
                 }
             }
     
             .image {
-                width: min(170px, 32%);
+                width: min(110px, 32%);
+                position: absolute;
+                right: 0;
+                top: 0;
+                opacity: 0.6;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-6px); /* Ajuste a altura da flutuação */
+                }
+                100% {
+                    transform: translateY(0);
+                }
             }
         }
     }

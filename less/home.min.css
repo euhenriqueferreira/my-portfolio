@@ -10,6 +10,12 @@
   font-weight: 500;
   font-style: normal;
 }
+.fonte-semibold {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
 .fonte-bold {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -553,23 +559,42 @@ header .hero-section-top .image .mobile {
   }
   header .hero-section-top {
     align-items: center;
+    position: relative;
   }
   header .hero-section-top .caption {
     padding-top: 0;
+    position: relative;
+    z-index: 2;
   }
   header .hero-section-top .caption .title h1 {
-    font-size: 25px;
+    font-size: 32px;
     margin-bottom: 9px;
   }
   header .hero-section-top .caption span.subtitle {
     font-size: 17px;
   }
   header .hero-section-top .caption p.resume {
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 9px;
   }
   header .hero-section-top .image {
-    width: min(170px, 32%);
+    width: min(110px, 32%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.6;
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+      /* Ajuste a altura da flutuação */
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 .w-container {
@@ -642,6 +667,9 @@ section.my-presentation .container-mp__image .mobile {
 section.my-presentation .container-mp__image .smartphone {
   display: none;
 }
+section.my-presentation .container-mp__image img {
+  display: none;
+}
 section.my-presentation .container-mp__caption {
   flex: 1;
 }
@@ -664,8 +692,10 @@ section.my-presentation .container-mp__caption .text p {
   font-weight: 400;
   font-style: normal;
 }
+/* ---------------- */
+/* -- My Hobbies -- */
+/* ---------------- */
 section.my-hobbies {
-  display: none;
   padding-bottom: 100px;
   max-width: 1100px;
   margin: 0 auto;
@@ -687,6 +717,8 @@ section.my-hobbies .container-mh__hobbies-list {
   display: grid;
   grid-template-columns: 460px 460px;
   column-gap: 65px;
+  justify-content: center;
+  align-items: flex-start;
 }
 section.my-hobbies .container-mh__hobbies-list .accordion {
   margin-bottom: 20px;
@@ -741,6 +773,12 @@ section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .ico
 section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .minus i {
   color: #ffffff;
 }
+section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon.active .plus {
+  display: none;
+}
+section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon.active .minus {
+  display: flex;
+}
 section.my-hobbies .container-mh__hobbies-list .accordion .accordion-content {
   overflow: hidden;
   max-height: 0;
@@ -760,8 +798,10 @@ section.my-hobbies .container-mh__hobbies-list .accordion .accordion-content p {
   font-weight: 400;
   font-style: normal;
 }
+/* ------------------- */
+/* -- My Experience -- */
+/* ------------------- */
 section.my-experience {
-  display: none;
   padding: 0px 20px;
 }
 section.my-experience .container-mx {
@@ -805,6 +845,141 @@ section.my-experience .container-mx__image img {
   height: 100%;
   object-fit: contain;
 }
+section.my-experience .container-mx__image .medium,
+section.my-experience .container-mx__image .mobile {
+  display: none;
+}
+section.my-experience .container-mx__image .scroll {
+  display: none;
+}
+/* -------------- */
+/* -- My Cases -- */
+/* -------------- */
+section.my-cases {
+  margin-top: 100px;
+  padding: 0px 20px;
+}
+section.my-cases .container-mc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 0 80px;
+}
+section.my-cases .container-mc__caption {
+  max-width: 580px;
+}
+section.my-cases .container-mc__caption h2 {
+  font-size: 40px;
+  line-height: 1.2em;
+  color: #ffffff;
+  margin-bottom: 22px;
+  text-align: left;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+section.my-cases .container-mc__caption .text p {
+  font-size: 17px;
+  line-height: 1.5em;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+section.my-cases .container-mc__list-cases {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 30px;
+  row-gap: 35px;
+}
+section.my-cases .container-mc__list-cases .scroll {
+  display: none;
+}
+section.my-cases .container-mc__list-cases .item {
+  width: 265px;
+  height: 115px;
+  border-radius: 10px;
+  background: #291344;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+section.my-cases .container-mc__list-cases .item img {
+  width: auto;
+  height: 62px;
+  object-fit: scale-down;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption {
+  background: #291344;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 13px;
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  z-index: 2;
+  transition: bottom 0.3s ease;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .hover-header h3 {
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 10px;
+  font-size: 18px;
+  line-height: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.7;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button span.mobile {
+  display: none;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button .bar {
+  opacity: 0.7;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button:hover {
+  opacity: 1;
+}
+section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button:hover .bar {
+  opacity: 1;
+}
+section.my-cases .container-mc__list-cases .item:hover .hover-caption {
+  bottom: 0;
+}
 /* ----------------------------------- */
 /* ---------- Media Queries ---------- */
 /* ----------------------------------- */
@@ -834,6 +1009,16 @@ section.my-experience .container-mx__image img {
   }
   section.my-presentation .container-mp__image {
     width: 490px;
+    position: relative;
+  }
+  section.my-presentation .container-mp__image img {
+    display: block;
+    width: 25px;
+    height: auto;
+    right: -23px;
+    bottom: 20px;
+    position: absolute;
+    z-index: 2;
   }
   section.my-presentation .container-mp__caption h2 {
     font-size: 36px;
@@ -846,6 +1031,104 @@ section.my-experience .container-mx__image img {
   }
   section.my-presentation .container-mp__caption .text p {
     font-size: 17px;
+  }
+  /* ---------------- */
+  /* -- My Hobbies -- */
+  /* ---------------- */
+  section.my-hobbies .container-mh__title {
+    margin-bottom: 30px;
+  }
+  section.my-hobbies .container-mh__title h2 {
+    font-size: 34px;
+  }
+  section.my-hobbies .container-mh__hobbies-list {
+    grid-template-columns: 435px 435px;
+    column-gap: 60px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx {
+    align-items: center;
+  }
+  section.my-experience .container-mx__caption {
+    padding-top: 0;
+    max-width: none;
+    flex: 1;
+  }
+  section.my-experience .container-mx__caption h2 {
+    font-size: 33px;
+    margin-bottom: 16px;
+  }
+  section.my-experience .container-mx__caption .text {
+    position: relative;
+    overflow: scroll;
+    max-height: 170px;
+    padding-right: 10px;
+    margin-bottom: 18px;
+  }
+  section.my-experience .container-mx__caption p {
+    margin-bottom: 0;
+  }
+  section.my-experience .container-mx__caption button.main-button {
+    font-size: 16px;
+  }
+  section.my-experience .container-mx__image {
+    width: min(531px, 46%);
+    position: relative;
+  }
+  section.my-experience .container-mx__image .scroll {
+    position: absolute;
+    left: -30px;
+    top: 80px;
+    display: block;
+    width: 23px;
+    height: auto;
+    object-fit: contain;
+  }
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases .container-mc {
+    gap: 0 45px;
+  }
+  section.my-cases .container-mc__caption h2 {
+    font-size: 37px;
+    margin-bottom: 18px;
+  }
+  section.my-cases .container-mc__caption .text {
+    position: relative;
+    overflow: scroll;
+    max-height: 270px;
+    padding-right: 10px;
+  }
+  section.my-cases .container-mc__list-cases {
+    column-gap: 22px;
+    row-gap: 18px;
+  }
+  section.my-cases .container-mc__list-cases .item {
+    width: 220px;
+    height: 105px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(3) img,
+  section.my-cases .container-mc__list-cases .item:nth-of-type(5) img {
+    height: 65px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(6) img {
+    height: 35px;
+  }
+  section.my-cases .container-mc__list-cases .item img {
+    height: 50px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .hover-header h3 {
+    font-size: 18px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button {
+    gap: 0 7px;
+    font-size: 16px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button .bar {
+    width: 15px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -870,6 +1153,112 @@ section.my-experience .container-mx__image img {
   section.my-presentation .container-mp__caption h2 {
     font-size: 34px;
   }
+  /* ---------------- */
+  /* -- My Hobbies -- */
+  /* ---------------- */
+  section.my-hobbies .container-mh__title h2 {
+    font-size: 31px;
+  }
+  section.my-hobbies .container-mh__hobbies-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 55px;
+    padding: 0 45px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header {
+    height: 40px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header span {
+    font-size: 19px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon {
+    width: 40px;
+    height: 40px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .plus,
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .minus {
+    width: 40px;
+    height: 40px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .plus i,
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .minus i {
+    font-size: 28px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-content p {
+    margin: 20px 5px 25px 0;
+    font-size: 16px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx__caption h2 {
+    font-size: 29px;
+  }
+  section.my-experience .container-mx__caption button.main-button {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+  section.my-experience .container-mx__image {
+    width: min(385px, 42%);
+  }
+  section.my-experience .container-mx__image .desk {
+    display: none;
+  }
+  section.my-experience .container-mx__image .medium {
+    display: block;
+  }
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases .container-mc {
+    gap: 0 35px;
+  }
+  section.my-cases .container-mc__caption h2 {
+    font-size: 31px;
+    margin-bottom: 15px;
+  }
+  section.my-cases .container-mc__caption .text {
+    max-height: 250px;
+  }
+  section.my-cases .container-mc__list-cases {
+    column-gap: 15px;
+    row-gap: 15px;
+    position: relative;
+  }
+  section.my-cases .container-mc__list-cases .scroll {
+    display: block;
+    position: absolute;
+    right: -30px;
+    bottom: 80px;
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+  }
+  section.my-cases .container-mc__list-cases .item {
+    width: 200px;
+    height: 95px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(3) img,
+  section.my-cases .container-mc__list-cases .item:nth-of-type(5) img {
+    height: 59px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(6) img {
+    height: 31px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(2) img {
+    height: 22px;
+  }
+  section.my-cases .container-mc__list-cases .item img {
+    height: 46px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button span.desk {
+    display: none;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .button a.external-case-button span.mobile {
+    display: block;
+  }
 }
 @media screen and (max-width: 850px) {
   /* --------------------- */
@@ -884,6 +1273,48 @@ section.my-experience .container-mx__image img {
   }
   section.my-presentation .container-mp__caption .text {
     max-height: 310px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx__caption h2 {
+    font-size: 27px;
+  }
+  section.my-experience .container-mx__caption .text {
+    max-height: 150px;
+  }
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases .container-mc__caption h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  section.my-cases .container-mc__caption .text {
+    max-height: 235px;
+  }
+  section.my-cases .container-mc__caption .text p {
+    font-size: 16px;
+  }
+  section.my-cases .container-mc__list-cases {
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+  section.my-cases .container-mc__list-cases .item {
+    width: 175px;
+    height: 90px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(6) img {
+    height: 27px;
+  }
+  section.my-cases .container-mc__list-cases .item:nth-of-type(2) img {
+    height: 18px;
+  }
+  section.my-cases .container-mc__list-cases .item img {
+    height: 42px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .hover-header h3 {
+    font-size: 17px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -902,11 +1333,97 @@ section.my-experience .container-mx__image img {
   section.my-presentation .container-mp__image .smartphone {
     display: block;
   }
+  section.my-presentation .container-mp__image img {
+    width: 22px;
+    right: -23px;
+    bottom: 18px;
+  }
   section.my-presentation .container-mp__caption h2 {
     font-size: 28px;
   }
   section.my-presentation .container-mp__caption .text p {
     font-size: 16px;
+  }
+  /* ---------------- */
+  /* -- My Hobbies -- */
+  /* ---------------- */
+  section.my-hobbies .container-mh__hobbies-list {
+    column-gap: 35px;
+    padding: 0 25px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-content p {
+    margin: 15px 5px 15px 0;
+    font-size: 15px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx {
+    gap: 0 25px;
+  }
+  section.my-experience .container-mx__caption h2 {
+    max-width: 260px;
+    margin-bottom: 10px;
+  }
+  section.my-experience .container-mx__caption .text {
+    max-height: 140px;
+    margin-bottom: 10px;
+  }
+  section.my-experience .container-mx__caption p {
+    font-size: 15px;
+  }
+  section.my-experience .container-mx__caption button.main-button {
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  section.my-experience .container-mx__image {
+    width: min(266px, 45%);
+  }
+  section.my-experience .container-mx__image .medium {
+    display: none;
+  }
+  section.my-experience .container-mx__image .mobile {
+    display: block;
+  }
+  section.my-experience .container-mx__image .scroll {
+    left: 20px;
+    top: 35px;
+  }
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases {
+    margin-top: 80px;
+    padding: 0px 20px;
+  }
+  section.my-cases .container-mc {
+    flex-direction: column;
+    gap: 55px 0;
+  }
+  section.my-cases .container-mc__caption {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.my-cases .container-mc__caption h2 {
+    margin-bottom: 14px;
+  }
+  section.my-cases .container-mc__caption .text {
+    text-align: center;
+  }
+  section.my-cases .container-mc__list-cases {
+    grid-template-columns: auto auto auto;
+  }
+  section.my-cases .container-mc__list-cases .scroll {
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+    bottom: unset;
+    top: -45px;
   }
 }
 @media screen and (max-width: 650px) {
@@ -937,15 +1454,77 @@ section.my-experience .container-mx__image img {
   section.my-presentation .container-mp__caption .text p {
     font-size: 16px;
   }
+  /* ---------------- */
+  /* -- My Hobbies -- */
+  /* ---------------- */
+  section.my-hobbies {
+    padding-bottom: 50px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header {
+    height: 35px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header span {
+    font-size: 18px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon {
+    width: 35px;
+    height: 35px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .plus,
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .minus {
+    width: 35px;
+    height: 35px;
+  }
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .plus i,
+  section.my-hobbies .container-mh__hobbies-list .accordion .accordion-header .icon .minus i {
+    font-size: 24px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx {
+    justify-content: flex-start;
+    position: relative;
+  }
+  section.my-experience .container-mx__caption {
+    max-width: 90%;
+    z-index: 2;
+    position: relative;
+  }
+  section.my-experience .container-mx__caption h2 {
+    max-width: none;
+    margin-bottom: 15px;
+  }
+  section.my-experience .container-mx__caption .text {
+    max-height: 150px;
+    margin-bottom: 20px;
+  }
+  section.my-experience .container-mx__image {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  section.my-experience .container-mx__image .mobile {
+    opacity: 0.15;
+  }
+  section.my-experience .container-mx__image .scroll {
+    left: auto;
+    right: 5%;
+    z-index: 2;
+    top: 5px;
+  }
 }
 @media screen and (max-width: 575px) {
   .container-about-me {
-    padding-top: 60px;
+    padding-top: 80px;
   }
   /* --------------------- */
   /* -- My Presentation -- */
   /* --------------------- */
   section.my-presentation .container-mp {
+    padding: 0px 20px 60px 20px;
     position: relative;
   }
   section.my-presentation .container-mp__image {
@@ -953,10 +1532,79 @@ section.my-experience .container-mx__image img {
     position: absolute;
     right: 10%;
   }
+  section.my-presentation .container-mp__image img {
+    display: none;
+  }
   section.my-presentation .container-mp__caption h2 {
     font-size: 25px;
   }
   section.my-presentation .container-mp__caption .text p {
     font-size: 15px;
+  }
+  /* ---------------- */
+  /* -- My Hobbies -- */
+  /* ---------------- */
+  section.my-hobbies .container-mh__title h2 {
+    font-size: 25px;
+  }
+  section.my-hobbies .container-mh__hobbies-list {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding: 0 40px;
+  }
+  /* ------------------- */
+  /* -- My Experience -- */
+  /* ------------------- */
+  section.my-experience .container-mx__caption {
+    max-width: 95%;
+  }
+  section.my-experience .container-mx__caption h2 {
+    font-size: 25px;
+  }
+  section.my-experience .container-mx__caption .text {
+    max-height: 220px;
+  }
+  section.my-experience .container-mx__image .scroll {
+    right: -10px;
+  }
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases {
+    margin-top: 65px;
+  }
+  section.my-cases .container-mc__caption h2 {
+    font-size: 25px;
+  }
+  section.my-cases .container-mc__caption .text {
+    max-height: 220px;
+  }
+  section.my-cases .container-mc__caption .text p {
+    font-size: 15px;
+  }
+  section.my-cases .container-mc__list-cases {
+    grid-template-columns: auto auto;
+  }
+  section.my-cases .container-mc__list-cases .item {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 440px) {
+  /* -------------- */
+  /* -- My Cases -- */
+  /* -------------- */
+  section.my-cases {
+    margin-top: 50px;
+  }
+  section.my-cases .container-mc__list-cases {
+    column-gap: 5px;
+    row-gap: 5px;
+  }
+  section.my-cases .container-mc__list-cases .item {
+    width: 165px;
+    height: 85px;
+  }
+  section.my-cases .container-mc__list-cases .item .hover-caption .hover-header h3 {
+    font-size: 16px;
   }
 }
