@@ -684,6 +684,31 @@
             </div>
         </section>
     </div><!-- Container About Me-->
+
+    <section class="contact-home">
+        <div class="w-container w1440">
+            <div class="container-ch">
+                <div class="container-ch__caption">
+                    <h2>Contate-me!</h2>
+                    <p>Você pode contatar-me por meio deste formulário ou por meio das redes sociais, estarei pronto para responder seus questionamentos ou apenas ter uma conversa!</p>
+                    <ul class="line-social-media">
+                        <li class="item">
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="item">
+                            <a href=""><i class="fa-brands fa-github"></i></a>
+                        </li>
+                        <li class="item">
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="item">
+                            <a href=""><i class="fa-solid fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <script src="scripts/js/home.js"></script>
 </body>
